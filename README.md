@@ -1,67 +1,37 @@
-# 10EQS Evaluation
+# Data Quality Engine Core 🛡️
 
-## Project Overview
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project helps a small business owner track their product pricing against market conditions. The tool processes product data, integrates market data from an external source, and generates actionable insights.
+### High-performance Business Rules Validation Engine
 
-## Setup Instructions
+This repository contains a robust engine designed to ensure **Data Integrity** and **Quality** in complex environments. Inspired by banking-grade data validation processes, this tool automates the execution of business rules over large datasets.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/juanjosetrujillocardozo/10eqs-evaluation
-   cd 10eqs-evaluation
+## 🚀 Key Features
+- **Automated Rule Execution:** Validates critical business logic (formats, ranges, cross-table integrity).
+- **Scalable Architecture:** Designed to handle large volumes of data using Python and optimized processing.
+- **Detailed Reporting:** Generates quality indicators and traceability logs for audit purposes.
+- **Extensible:** Easily add new business rules via modular configuration.
 
-2. **Install dependencies**:  
-   Make sure you have Python installed (version 3.7 or higher). Then, run:  
-   ```bash
-   pip install -r requirements.txt
-3. **Set up environment variables**:  
-   - Copy the `.env.example` file to `.env`:  
-     ```bash
-     cp .env.example .env
-     ```  
-   - Open the `.env` file and add any necessary API keys (if applicable).
-4. **Run the analysis**:  
-   To process the data and generate insights, execute:  
-   ```bash
-   python src/analysis.py data/products.csv
-## Output
+## 🛠️ Tech Stack
+- **Language:** Python
+- **Data Processing:** Pandas / PySpark (optional)
+- **Environment:** Dockerized for consistent deployment.
+- **Cloud Ready:** Compatible with AWS (Athena/S3) and Azure environments.
 
-- **`report.md`**: This file is generated automatically and contains the insights from the data analysis. It includes:
-  - Products that are overpriced or underpriced compared to the market.
-  - Recommendations for price adjustments.
-## Example of `report.md`
+## 📋 How it Works
+The engine follows a 3-step process:
+1. **Ingestion:** Loads data from various sources (CSV, Parquet, SQL).
+2. **Validation:** Applies a suite of pre-defined business rules.
+3. **Output:** Produces a Data Quality Report with pass/fail percentages and error logs.
 
-The `report.md` file is automatically created and provides insights like:
+## 🔧 Installation & Usage
+```bash
+# Clone the repository
+git clone https://github.com/juanjosetrujillocardozo/Data-Quality-Engine-Core.git
 
-### Insights
+# Install dependencies
+pip install -r requirements.txt
 
-- Organic Coffee Beans (1lb) is overpriced by $2.00. Consider reducing the price.
-- Premium Green Tea (50 bags) is overpriced by $0.50. Consider reducing the price.
-- Masala Chai Mix (12oz) is underpriced by $0.50.
-- Yerba Mate Loose Leaf (1lb) is underpriced by $0.50.
-- Hot Chocolate Mix (1lb) is priced competitively at $7.99.
-- Earl Grey Tea (100 bags) is overpriced by $0.50. Consider reducing the price.
-- Espresso Beans (1lb) is overpriced by $0.50. Consider reducing the price.
-- Chamomile Tea (30 bags) is overpriced by $0.50. Consider reducing the price.
-- Matcha Green Tea Powder (4oz) is overpriced by $0.50. Consider reducing the price.
-- Decaf Coffee Beans (1lb) is overpriced by $0.50. Consider reducing the price.
-- Mint Tea (25 bags) is underpriced by $0.50.
-- Instant Coffee (8oz) is overpriced by $0.50. Consider reducing the price.
-- cold brew concentrate is overpriced by $0.50. Consider reducing the price.
-## Known Issues
-
-- The tool assumes all product names in the external API match exactly with the CSV data.
-- The external data source must provide prices in the same currency as the `products.csv`.
-## External Data Source
-
-The tool uses the **OpenFoodFacts API** to fetch product pricing data. For more details, visit [OpenFoodFacts API documentation](https://world.openfoodfacts.org/data).
-
-## Time Spent
-
-- Setting up the project: 10 minutes
-- Writing the utility functions: 15 minutes
-- Integrating external data: 15 minutes
-- Testing and debugging: 10 minutes
-- Documentation: 10 minutes
-- **Total: 60 minutes**
+# Run the engine
+python main.py --input data/sample.csv
